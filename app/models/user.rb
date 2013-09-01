@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
-   after_create :add_user_to_mailchimp
-    before_destroy :remove_user_from_mailchimp
-  
+  # after_create :add_user_to_mailchimp
+  #  before_destroy :remove_user_from_mailchimp
+  after_create :send_welcome_email
 
     # override Devise method
     # no password is required when the account is created; validate password when the user sets one
@@ -63,6 +63,13 @@ class User < ActiveRecord::Base
   
   
    private
+   
+   
+   def send_welcome_email
+     return if email.include?(ENV['ADMIN_EMAIL'])
+     UserMailer.welcome_email(self).deliver
+   end
+   
 
    def add_user_to_mailchimp
        return if email.include?(ENV['ADMIN_EMAIL'])
