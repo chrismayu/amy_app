@@ -53,7 +53,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'roo'
 gem "letter_opener", :group => :development
 
-gem "gibbon"
+gem "gibbon", "0.4.6"
 
 group :development, :test do
 
