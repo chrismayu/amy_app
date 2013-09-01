@@ -74,11 +74,11 @@ GEM
     daemons (1.1.9)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
-    devise (3.0.3)
+    devise (2.2.5)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.3)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     diff-lcs (1.2.4)
     email_spec (1.5.0)
       launchy (~> 2.1)
@@ -275,7 +275,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner (= 1.0.1)
-  devise
+  devise (= 2.2.5)
   email_spec
   exception_notification
   factory_girl_rails
